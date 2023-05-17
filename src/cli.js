@@ -1,9 +1,13 @@
-#!/usr/bin/env node
-/* eslint-disable import/prefer-default-export */
 import readlineSync from 'readline-sync';
-
-export function  eren() {
+// Приветствие
+function eren() {
   console.log('Welcome to the Brain Games!');
   const username = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${username}!`);
+  return console.log(`Hello, ${username}!`);
 }
+// случайное число от min до (max+1)
+function randomInteger(min = 2, max = 100) {
+  const rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+export { eren, randomInteger };
